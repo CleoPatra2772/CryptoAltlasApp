@@ -6,6 +6,8 @@ import {Col, Row, Typography, Select } from 'antd';
 import { MoneyCollectOutlined, DollarCircleOutlined, FundOutlined, ExclamationCircleOutlined, StopOutlined, TrophyOutlined, CheckOutlined, NumberOutlined, ThunderboltOutlined } from '@ant-design/icons';
 import { LineChart } from '../line-chart/line-chart.component';
 import { useGetCryptoDetailsQuery, useGetCryptoHistoryQuery } from '../../services/cryptoApi';
+import './crypto-details.styles.css';
+
 
 const { Title, Text } = Typography;
 const { Option } = Select;
@@ -42,12 +44,12 @@ export const CryptoDetails =() =>{
         <Col className='coin-detail-container'>
             <Col className='coin-heading-container'>
                 <h2 className='coin-name'>
-                    {data?.data?.coin.name}({data?.data?.coin.symbol}) Price </h2>
+                    {data?.data?.coin.name}({data?.data?.coin.symbol}) Price💰 </h2>
                     <p>
-                        {data?.data?.coin.name} live price in US dollars.
+                        Everything you need to know about {data?.data?.coin.name}. Price in US dollars for the last seven days.
                         View value statistics, market cap and supply.
                     </p>
-                    <select 
+                    {/* <select 
                     defaultValue='7d' 
                     className='select-timeperiod' 
                     placeholder='Select Time Period'
@@ -55,13 +57,13 @@ export const CryptoDetails =() =>{
                     >
                     {time.map((date) => 
                     <option key={date}>{date}</option>)}
-                    </select>
+                    </select> */}
                     {/* <LineChart 
                     coinHistory={coinHistory} 
                     currentPrice={Math.round((data?.data?.coin.price) * 100) / 100}
                     coinName = {(data?.data?.coin.name)}
                     /> */}
-
+                    <hr></hr>
                     <Col className='stats-container'>
                     <Col className='coin-value-statistics'>
                         <Col className='coin-value-statistics-heading'>
@@ -88,7 +90,7 @@ export const CryptoDetails =() =>{
                             </h3>
                             <p>An overview showing stats of all cryptocurrencies</p>
                             
-                        </Col>
+                        
 
                         {genericStats.map(({icon, title, value}) => 
                         <Col className='coin-stats'>
@@ -100,19 +102,24 @@ export const CryptoDetails =() =>{
                         </Col>
                         
                         )}
+                        </Col>
                     </Col>
                     </Col>
+                    <hr></hr>
                     <Col className='coin-desc-link'>
                         <Row className='coin-desc'>
-                            <h3 className='coin-details-heading'>
+                            <h2 className='coin-details-heading'>More Info: </h2>
+                            <h3>
                                 What is {data?.data?.coin.name}?
                                  </h3>
                             <p>{HTMLReactParser(String(data?.data?.coin.description))}  </p> 
                             
                         </Row>
                     </Col>
+
+                    <hr></hr>
                     <Col className='coin-links'>
-                        <h3>{data?.data?.coin.name}</h3>
+                        <h3 className='coin-details-heading'>{data?.data?.coin.name}</h3>
                         {data?.data?.coin.links.map((link) =>
                         <Row className='coin-link'>
                             <h5>{link.type}</h5>

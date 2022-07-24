@@ -1,0 +1,31 @@
+.news-app-container{
+    text-align: center;
+    display: grid;
+    grid-auto-flow: column;
+    padding-top: 100px;
+    display: inline-block;
+   
+   
+}
+
+/* .news-app{
+    justify-content: center;
+} */
+
+.news-row{
+padding: 10px;
+}
+
+
+.news-item{
+    width: 500px;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px ;
+    border-radius: 3%;
+    background-color: #EFDCF9;
+}
+
+.news-img{
+    width: 400px;
+}

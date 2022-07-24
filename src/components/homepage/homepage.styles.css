@@ -18,8 +18,9 @@
     font-size: 1.5rem;
 }
 
-.stats-logo{
+.stats-logo, .news-logo{
     width: 20%;
+    padding: 10px 10px 10px 10px;
 }
 
 .home-heading-container{
@@ -29,6 +30,10 @@
 
 .news{
     padding-top: 400px;
+}
+
+.news-description{
+    padding-top: 80px;
 }
 
 

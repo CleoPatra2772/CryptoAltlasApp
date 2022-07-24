@@ -1,25 +1,40 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import { NewsItem } from './news-item.component';
 
 
+export const News =() => {
+    const [articles, setArticles] = useState([]);
 
-export const News =({ simplified }) => {
-    const options = {
-        method: 'GET',
-        headers: {
-            'X-RapidAPI-Key': '1f6c774280mshbd3b108dbe1033bp176a90jsndf0ae21c8e8e',
-            'X-RapidAPI-Host': 'blockchain-news1.p.rapidapi.com'
+
+    useEffect(() => {
+        const getArticles = async() =>{
+            const response = await axios.get('https://newsapi.org/v2/everything?q=crypto&from=2022-06-24&sortBy=publishedAt&apiKey=14b9e700d07049f98bc575183c2d5fa3');
+            console.log(response);
+            setArticles(response.data.articles);
+
         }
-    };
-    
-    fetch('https://blockchain-news1.p.rapidapi.com/news/NDTV', options)
-        .then(response => response.json())
-        .then(response => console.log(response))
-        .catch(err => console.error(err));
+        getArticles()
+        
+    },[]);
 
-    return(
+    return (
+            
         <div>
-            <h1>This is news page</h1>
+            {articles.slice(0,10).map((article) => {
+                return (
+                    <NewsItem 
+                    key={article.id}
+                        title={article.title}
+                        description={article.description}
+                        url={article.url}
+                        urlToImage={article.urlToImage}
+                    />
+                )
+            })}
         </div>
-    )
+
+    );
+      
 }
 

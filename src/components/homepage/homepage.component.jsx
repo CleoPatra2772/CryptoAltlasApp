@@ -8,6 +8,9 @@ import { News } from "../news/news.component";
 import './homepage.styles.css';
 import { CarouselComponent } from "../carousel/carousel.component";
 import statsLogo from '../../assets/images/stats.svg';
+import { Footer } from "../footer/footer.component";
+import newspaper from '../../assets/images/newspaper.svg';
+
 const { Title } = Typography;
 
 export const HomePage =() =>{
@@ -26,15 +29,18 @@ export const HomePage =() =>{
             <h1 className="heading">Global Crypto Stats🌎</h1>
             <img className='stats-logo' src={statsLogo} alt='stats-logo'/>
             <Row>
-                <Col span={12}><Statistic  title="Total Cryptocurrencies" value={globalStats.total}/>
+                <Col span={12}><h3>Total Cryptocurrencies: {(globalStats.total).toLocaleString('en-US')} </h3>
         </Col>
-        <Col span={12}><Statistic  title="Total Exchanges" value={millify=(globalStats.totalExchanges)}/>
+        <Col span={12}><h3>Total Exchanges: {millify=(globalStats.totalExchanges).toLocaleString('en-US')}</h3>
         </Col>
-        <Col span={12}><Statistic  title="Total Market Cap" value={millify=(globalStats.totalMarketCap)}/>
+        <Col span={12}><h3>Total Market Cap: {millify=(globalStats.totalMarketCap).toLocaleString('en-US')}</h3>
+       
         </Col>
-        <Col span={12}><Statistic title="Total 24h volume" value={millify=(globalStats.total24hVolume)}/>
+        <Col span={12}><h3>Total 24h volume: {millify=(globalStats.total24hVolume).toLocaleString('en-US')}</h3>
+        
         </Col> 
-        <Col span={12}><Statistic title="Total Markets" value={millify=(globalStats.totalMarkets)}/>
+        <Col span={12}><h3>Total Markets: {millify=(globalStats.totalMarkets).toLocaleString('en-US')}</h3>
+       
         </Col>
             </Row>
             </div>
@@ -50,11 +56,16 @@ export const HomePage =() =>{
             </div> */}
             </div>
             <div className='news'>
-            <h1>Cryptocurrency News</h1>
-            <News simplified />
+            <h1>Cryptocurrency News📺</h1>
+            <img className='news-logo' src={newspaper} alt='news-logo'/>
+            <h3 className='news-description'>Be up-to-date on what's going on in the crypto world.</h3>
+            <h3><Link to='/news'>Show more</Link></h3>
+
+            {/* <News simplified /> */}
             
             </div>
             </div>
+            <Footer />
         </>
     )
 }
