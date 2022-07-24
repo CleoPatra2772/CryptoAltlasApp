@@ -1,0 +1,8 @@
+.footer{
+  
+    /* background-color: #F4C430; */
+    text-align: center;
+    height: 100px;
+    grid-row-end: 3;
+}
+

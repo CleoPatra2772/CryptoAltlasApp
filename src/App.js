@@ -7,6 +7,7 @@ import { HomePage } from "./components/homepage/homepage.component";
 import { Cryptocurrencies } from "./components/cryptocurrencies/cryptocurrencies.component";
 import { CryptoDetails } from "./components/crypto-details/crypto-details.component";
 import { News } from "./components/news/news.component";
+import { Footer } from "./components/footer/footer.component";
 
  const App =() =>{
     return (
@@ -34,6 +35,7 @@ import { News } from "./components/news/news.component";
             </div>
             </div>
             <div className="footer">
+            
 
             </div>
         </div>

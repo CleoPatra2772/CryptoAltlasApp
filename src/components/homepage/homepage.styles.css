@@ -10,3 +10,25 @@
 .heading{
     padding-top: 20px;
 }
+
+.global-stats{
+    text-align: flex;
+    padding: 80px 80px 80px 80px;
+    /* background-color: #EFDCF9; */
+    font-size: 1.5rem;
+}
+
+.stats-logo{
+    width: 20%;
+}
+
+.home-heading-container{
+    padding: 80px 80px 80px 80px;
+    /* background-color: #FFDB58 ; */
+}
+
+.news{
+    padding-top: 400px;
+}
+
+

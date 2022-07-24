@@ -1,15 +1,20 @@
 import React from 'react';
-import { Select, Typography, Row, Col, Avatar, Card} from 'antd';
-import moment from 'moment';
-import { useGetCryptoNewsQuery } from '../../services/cryptoNewsApi';
-const { Text, Title } = Typography;
-const { Option } = Select;
+
 
 
 export const News =({ simplified }) => {
-    const { data: cryptoNews} = useGetCryptoNewsQuery({ newsCategory: 'Cryptocurrency', count: simplified ? 10: 100 });
-
-    if(!cryptoNews?.value) return 'Loading...';
+    const options = {
+        method: 'GET',
+        headers: {
+            'X-RapidAPI-Key': '1f6c774280mshbd3b108dbe1033bp176a90jsndf0ae21c8e8e',
+            'X-RapidAPI-Host': 'blockchain-news1.p.rapidapi.com'
+        }
+    };
+    
+    fetch('https://blockchain-news1.p.rapidapi.com/news/NDTV', options)
+        .then(response => response.json())
+        .then(response => console.log(response))
+        .catch(err => console.error(err));
 
     return(
         <div>

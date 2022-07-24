@@ -5,6 +5,7 @@ import {Row, Col} from 'react-bootstrap';
 import { Card, Input } from 'antd';
 import { useGetCryptosQuery } from "../../services/cryptoApi";
 import './cryptocurrencies.styles.css';
+import { Footer } from '../footer/footer.component';
 
 export const Cryptocurrencies =({simplified}) =>{
     const count = simplified ? 10: 100;
@@ -51,7 +52,7 @@ export const Cryptocurrencies =({simplified}) =>{
                 ))}
 
             </Row>
-       
+           
         </>
     )
 }
