@@ -6,6 +6,7 @@ import { useGetCryptosQuery } from "../../services/cryptoApi";
 import { Cryptocurrencies } from "../cryptocurrencies/cryptocurrencies.component";
 import { News } from "../news/news.component";
 import './homepage.styles.css';
+import banner from '../../assets/images/crypto-coins.png';
 
 const { Title } = Typography;
 
@@ -18,7 +19,10 @@ export const HomePage =() =>{
     return(
         <>
         <div className='home-container'>
-            <Title level={2} className="heading">Global Crypto Stats</Title>
+        {/* <img className='banner-img' src={banner} alt='banner-img'/> */}
+        <h1 className="heading">Welcome to CryptoAtlas* </h1>
+        <h4><em>A site keeping up with the latest news and more</em></h4>
+            {/* <h1 className="heading">Global Crypto Stats</h1> */}
             <Row>
                 <Col span={12}><Statistic title="Total Cryptocurrencies" value={globalStats.total}/>
         </Col>
@@ -37,10 +41,10 @@ export const HomePage =() =>{
                 <Title level={3} className='show-more'><Link to='/cryptocurrencies'>Show More</Link></Title>
             </div>
             <Cryptocurrencies simplified/>
-            <div className='home-heading-container'>
+            {/* <div className='home-heading-container'>
                 <Title level={2} className='home-title'>Latest Crypto News</Title>
                 <Title level={3} className='show-more'><Link to='/news'>Get Latest News</Link></Title>
-            </div>
+            </div> */}
 
             <News simplified />
             </div>

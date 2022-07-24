@@ -22,7 +22,7 @@ export const Navigation = () => {
                 </Navbar.Toggle>
             <Link className='navigation-element' to="/"><span>Home</span></Link>
             <Link className='navigation-element'to="/cryptocurrencies"><span>CryptoCurrencies</span></Link>
-            <Link className='navigation-element'to="/exchanges"><span>Exchanges</span></Link>
+            
             <Link className='navigation-element'to="/news"><span>News</span></Link>
          
           </Container>

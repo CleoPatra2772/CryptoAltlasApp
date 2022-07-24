@@ -24,9 +24,10 @@ export const Cryptocurrencies =({simplified}) =>{
 
     return(
         <>
-        <div className='search-crypto'>
+        {!simplified && (<div className='search-crypto'>
             <Input placeholder="Search Cryptocurrency" onChange= {(e) =>setSearchTerm (e.target.value)} />
-        </div>
+        </div>)}
+        
      
             <Row className='crypto-card-container'>
                 {cryptos?.map((currency)=>(

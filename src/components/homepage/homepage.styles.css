@@ -1,3 +1,12 @@
 .home-container{
     text-align: center;
 }
+
+.banner-img{
+    max-width: 100%;
+    margin: auto;
+}
+
+.heading{
+    padding-top: 20px;
+}

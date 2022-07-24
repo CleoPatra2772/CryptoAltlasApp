@@ -4,7 +4,6 @@ import { Layout, Typography, Space } from "antd";
 import { Navigation} from "./components/navigation/navigation.components";
 import './App.css';
 import { HomePage } from "./components/homepage/homepage.component";
-import { Exchanges } from "./components/exchanges/exchanges.component";
 import { Cryptocurrencies } from "./components/cryptocurrencies/cryptocurrencies.component";
 import { CryptoDetails } from "./components/crypto-details/crypto-details.component";
 import { News } from "./components/news/news.component";
@@ -20,8 +19,8 @@ import { News } from "./components/news/news.component";
                 <Routes>
                     <Route path="/"
                         element = {<HomePage />} />
-                    <Route  path="/exchanges"
-                        element = {<Exchanges />} />
+                    {/* <Route  path="/exchanges"
+                        element = {<Exchanges />} /> */}
                  
                     <Route  path="/cryptocurrencies"
                         element = {<Cryptocurrencies />} />
