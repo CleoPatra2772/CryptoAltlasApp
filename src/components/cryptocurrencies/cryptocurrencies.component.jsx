@@ -6,6 +6,7 @@ import { Card, Input } from 'antd';
 import { useGetCryptosQuery } from "../../services/cryptoApi";
 import './cryptocurrencies.styles.css';
 import { Footer } from '../footer/footer.component';
+import { Loader } from '../loader/loader.component';
 
 export const Cryptocurrencies =({simplified}) =>{
     const count = simplified ? 10: 100;
@@ -21,7 +22,7 @@ export const Cryptocurrencies =({simplified}) =>{
     [
         cryptosList, searchTerm
     ]);
-    if(isFetching) return 'Loading...';
+    if(isFetching) return <Loader />;
 
     return(
         <>

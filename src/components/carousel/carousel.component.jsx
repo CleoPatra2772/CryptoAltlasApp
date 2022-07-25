@@ -1,4 +1,5 @@
 import Carousel from 'react-bootstrap/Carousel';
+import { Link } from 'react-router-dom';
 import banner from '../../assets/images/crypto-coins.png';
 import slide2 from '../../assets/images/slide.png';
 import slide3 from '../../assets/images/slide3.png';
@@ -20,28 +21,32 @@ export const CarouselComponent = () =>{
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
+      <Link to='/cryptocurrencies'>
         <img
           className="d-block w-100"
           src={slide2}
           alt="Second slide"
         />
+        </Link>
 
         <Carousel.Caption>
-          <h3>Second slide label</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <h3>Discover Cryptos</h3>
+          <p>Discover your favorite crypto price and status.</p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
+        <Link to='/news'>
         <img
           className="d-block w-100"
           src={slide3}
           alt="Third slide"
         />
+        </Link>
 
         <Carousel.Caption>
-          <h3>Third slide label</h3>
+          <h3>Crypto, NFT, Blockchain News</h3>
           <p>
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+            Learn about what is happening everyday in the crypto world.
           </p>
         </Carousel.Caption>
       </Carousel.Item>

@@ -10,6 +10,7 @@ import { CarouselComponent } from "../carousel/carousel.component";
 import statsLogo from '../../assets/images/stats.svg';
 import { Footer } from "../footer/footer.component";
 import newspaper from '../../assets/images/newspaper.svg';
+import { Loader } from "../loader/loader.component";
 
 const { Title } = Typography;
 
@@ -17,7 +18,7 @@ export const HomePage =() =>{
     const { data, isFetching } = useGetCryptosQuery(10);
     const globalStats = data?.data?.stats;
 
-    if(isFetching) return 'Loading ...';
+    if(isFetching) return <Loader />;
 
     return(
         <>
